@@ -13,16 +13,31 @@ public:
 	Demo();
 	~Demo();
 private:
-	GLuint shaderProgram, VBO, VAO, EBO, texture, VBO2, VAO2, EBO2, texture2;
-	float angle = 0;
+	GLuint VBO0, VAO0, EBO0, texture0; //Ruangan
+	GLuint shaderProgram, VBO, VAO, EBO, texture; //Meja
+	GLuint VBO2, VAO2, EBO2, texture2; //Lantai
+	GLuint VBO3, VAO3, EBO3, texture3; //Kursi
+	float viewCamX, viewCamY, viewCamZ, upCamX, upCamY, upCamZ, posCamX, posCamY, posCamZ, CAMERA_SPEED, fovy;
 	virtual void Init();
 	virtual void DeInit();
 	virtual void Update(double deltaTime);
 	virtual void Render();
 	virtual void ProcessInput(GLFWwindow *window);
+	//Ruangan
+	void BuildColoredRoom();
+	void DrawColoredRoom();
+	//Meja
 	void BuildColoredCube();
-	void BuildColoredPlane();
 	void DrawColoredCube();
+	//Kursi
+	void BuildColoredKursi();
+	void DrawColoredKursi();
+	//Lantai
+	void BuildColoredPlane();
 	void DrawColoredPlane();
+	void MoveCamera(float speed);
+	void StrafeCamera(float speed);
+	void RotateCamera(float speed);
+	void InitCamera();
 };
 
