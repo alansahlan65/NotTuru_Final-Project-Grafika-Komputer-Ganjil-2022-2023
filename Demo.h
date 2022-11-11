@@ -30,9 +30,6 @@ private:
 	//Ruangan
 	void BuildColoredRoom();
 	void DrawColoredRoom();
-	//Jendela
-	void BuildColoredJendela();
-	void DrawColoredJendela();
 	//Meja
 	void BuildColoredCube();
 	void DrawColoredCube();
